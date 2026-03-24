@@ -8,6 +8,7 @@ import { ArchitectureSection } from "@/components/sections/architecture-section"
 import { ScopeSection } from "@/components/sections/scope-section";
 import { ImpactSection } from "@/components/sections/impact-section";
 import { CTASection } from "@/components/sections/cta-section";
+import { FAQSection } from "@/components/sections/faq-section";
 
 export default function Home() {
   return (
@@ -33,6 +34,7 @@ export default function Home() {
             <a href="#architecture" className="hover:text-teal-300 transition-colors duration-300">Architecture</a>
             <a href="#scope" className="hover:text-teal-300 transition-colors duration-300">Scope</a>
             <a href="#impact" className="hover:text-teal-300 transition-colors duration-300">Impact</a>
+            <a href="#faq" className="hover:text-teal-300 transition-colors duration-300">FAQ</a>
           </div>
           <div className="text-xs text-slate-600 font-[family-name:var(--font-jetbrains-mono)]">
             Bearplex Internal
@@ -66,6 +68,11 @@ export default function Home() {
       {/* Impact */}
       <div id="impact">
         <ImpactSection />
+      </div>
+
+      {/* FAQ */}
+      <div id="faq">
+        <FAQSection />
       </div>
 
       {/* CTA */}
