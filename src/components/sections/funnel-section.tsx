@@ -134,11 +134,11 @@ const stages = [
 ];
 
 const colorMap: Record<string, { border: string; bg: string; text: string }> = {
-  teal: { border: "border-teal-500/20", bg: "bg-teal-500/8", text: "text-teal-400" },
-  emerald: { border: "border-emerald-500/20", bg: "bg-emerald-500/8", text: "text-emerald-400" },
-  amber: { border: "border-amber-500/20", bg: "bg-amber-500/8", text: "text-amber-400" },
-  violet: { border: "border-violet-500/20", bg: "bg-violet-500/8", text: "text-violet-400" },
-  rose: { border: "border-rose-500/20", bg: "bg-rose-500/8", text: "text-rose-400" },
+  teal: { border: "border-teal-400/30 dark:border-teal-500/20", bg: "bg-teal-500/8", text: "text-teal-700 dark:text-teal-400" },
+  emerald: { border: "border-emerald-500/20", bg: "bg-emerald-500/8", text: "text-emerald-700 dark:text-emerald-400" },
+  amber: { border: "border-amber-500/20", bg: "bg-amber-500/8", text: "text-amber-700 dark:text-amber-400" },
+  violet: { border: "border-violet-500/20", bg: "bg-violet-500/8", text: "text-violet-700 dark:text-violet-400" },
+  rose: { border: "border-rose-500/20", bg: "bg-rose-500/8", text: "text-rose-700 dark:text-rose-400" },
 };
 
 export function FunnelSection() {
@@ -152,10 +152,10 @@ export function FunnelSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="inline-block mb-4 px-4 py-1.5 rounded-full border border-teal-500/20 bg-teal-500/5 text-teal-400 text-sm font-medium">
+          <span className="inline-block mb-4 px-4 py-1.5 rounded-full border border-teal-400/30 dark:border-teal-500/20 bg-teal-100 dark:bg-teal-500/5 text-teal-700 dark:text-teal-400 text-sm font-medium">
             THE SOLUTION
           </span>
-          <h2 className="text-4xl md:text-6xl font-bold bg-gradient-to-br from-white to-teal-200 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-6xl font-bold bg-gradient-to-br from-foreground to-teal-500 dark:to-teal-200 bg-clip-text text-transparent">
             The Autonomous Funnel
           </h2>
           <p className="mt-6 text-muted-foreground max-w-2xl mx-auto text-lg leading-relaxed">
@@ -230,7 +230,7 @@ export function FunnelSection() {
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                         {stage.details.map((detail, i) => (
                           <div key={i} className="flex items-start gap-3 p-3 rounded-lg bg-background/80 border border-border/50">
-                            <div className={cn("w-1.5 h-1.5 rounded-full mt-2 shrink-0", colors.text === "text-teal-400" ? "bg-teal-400" : colors.text === "text-emerald-400" ? "bg-emerald-400" : colors.text === "text-amber-400" ? "bg-amber-400" : colors.text === "text-violet-400" ? "bg-violet-400" : "bg-rose-400")} />
+                            <div className={cn("w-1.5 h-1.5 rounded-full mt-2 shrink-0", colors.text === "text-teal-700 dark:text-teal-400" ? "bg-teal-400" : colors.text === "text-emerald-700 dark:text-emerald-400" ? "bg-emerald-400" : colors.text === "text-amber-700 dark:text-amber-400" ? "bg-amber-400" : colors.text === "text-violet-700 dark:text-violet-400" ? "bg-violet-400" : "bg-rose-400")} />
                             <span className="text-sm text-muted-foreground">{detail}</span>
                           </div>
                         ))}

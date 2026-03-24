@@ -68,7 +68,7 @@ export function FAQSection() {
   return (
     <section className="relative py-24 md:py-32 px-4 md:px-8 overflow-hidden">
       {/* Background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-teal-500/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-teal-100 dark:bg-teal-500/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-4xl mx-auto relative z-10">
         {/* Section header */}
@@ -79,9 +79,9 @@ export function FAQSection() {
           transition={{ duration: 0.7, ease: [0.25, 0.4, 0.25, 1] }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-teal-500/20 bg-teal-500/5 mb-6">
-            <HelpCircle className="w-3.5 h-3.5 text-teal-400" />
-            <span className="text-xs font-mono text-teal-300 uppercase tracking-widest">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-teal-400/30 dark:border-teal-500/20 bg-teal-100 dark:bg-teal-500/5 mb-6">
+            <HelpCircle className="w-3.5 h-3.5 text-teal-700 dark:text-teal-400" />
+            <span className="text-xs font-mono text-teal-700 dark:text-teal-300 uppercase tracking-widest">
               FAQ
             </span>
           </div>
@@ -110,8 +110,8 @@ export function FAQSection() {
               <div
                 className={`rounded-xl border transition-all duration-300 ${
                   openIndex === index
-                    ? "border-teal-500/30 bg-teal-500/5"
-                    : "border-slate-800/60 bg-slate-900/30 hover:border-slate-700/60"
+                    ? "border-teal-400/40 dark:border-teal-500/30 bg-teal-100 dark:bg-teal-500/5"
+                    : "border-border bg-card/50 hover:border-border"
                 }`}
               >
                 <button
@@ -120,7 +120,7 @@ export function FAQSection() {
                   }
                   className="w-full flex items-start gap-4 p-5 md:p-6 text-left cursor-pointer"
                 >
-                  <span className="text-teal-500/60 font-mono text-xs mt-1.5 shrink-0">
+                  <span className="text-teal-600 dark:text-teal-500/60 font-mono text-xs mt-1.5 shrink-0">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                   <span className="flex-1 text-foreground font-medium text-sm md:text-base leading-relaxed">
@@ -128,7 +128,7 @@ export function FAQSection() {
                   </span>
                   <ChevronDown
                     className={`w-5 h-5 text-muted-foreground shrink-0 mt-0.5 transition-transform duration-300 ${
-                      openIndex === index ? "rotate-180 text-teal-400" : ""
+                      openIndex === index ? "rotate-180 text-teal-700 dark:text-teal-400" : ""
                     }`}
                   />
                 </button>

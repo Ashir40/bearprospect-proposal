@@ -18,6 +18,9 @@ export default function Home() {
 
   return (
     <main className="relative bg-background">
+      {/* Theme toggle — fixed bottom right */}
+      <ThemeToggle />
+
       {/* Hover trigger zone — invisible strip at top of screen */}
       <div
         className="fixed top-0 left-0 right-0 h-5 z-[101]"
@@ -55,12 +58,9 @@ export default function Home() {
             <a href="#impact" className="hover:text-primary transition-colors duration-300">Impact</a>
             <a href="#faq" className="hover:text-primary transition-colors duration-300">FAQ</a>
           </div>
-          <div className="flex items-center gap-3">
-            <span className="text-xs text-muted-foreground font-[family-name:var(--font-jetbrains-mono)]">
-              Bearplex Internal
-            </span>
-            <ThemeToggle />
-          </div>
+          <span className="text-xs text-muted-foreground font-[family-name:var(--font-jetbrains-mono)]">
+            Bearplex Internal
+          </span>
         </div>
       </nav>
 

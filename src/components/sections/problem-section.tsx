@@ -62,7 +62,7 @@ const GridItem = ({ icon, title, description, index }: GridItemProps) => {
       viewport={{ once: true }}
       className="min-h-[14rem] list-none"
     >
-      <div className="relative h-full rounded-[1.25rem] border-[0.75px] border-red-500/10 p-2 md:rounded-[1.5rem] md:p-3">
+      <div className="relative h-full rounded-[1.25rem] border-[0.75px] border-red-300/30 dark:border-red-500/10 p-2 md:rounded-[1.5rem] md:p-3">
         <GlowingEffect
           spread={40}
           glow={true}
@@ -71,13 +71,13 @@ const GridItem = ({ icon, title, description, index }: GridItemProps) => {
           inactiveZone={0.01}
           borderWidth={3}
         />
-        <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl border-[0.75px] border-red-900/20 bg-card p-6 shadow-sm md:p-6">
+        <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl border-[0.75px] border-red-200/40 dark:border-red-900/20 bg-card p-6 shadow-sm md:p-6">
           <div className="relative flex flex-1 flex-col justify-between gap-3">
-            <div className="w-fit rounded-lg border-[0.75px] border-red-500/20 bg-red-500/5 p-2 text-red-400/80">
+            <div className="w-fit rounded-lg border-[0.75px] border-red-500/20 bg-red-100 dark:bg-red-500/5 p-2 text-red-400/80">
               {icon}
             </div>
             <div className="space-y-3">
-              <h3 className="pt-0.5 text-xl leading-[1.375rem] font-semibold tracking-[-0.04em] md:text-2xl md:leading-[1.875rem] text-red-300/90">
+              <h3 className="pt-0.5 text-xl leading-[1.375rem] font-semibold tracking-[-0.04em] md:text-2xl md:leading-[1.875rem] text-red-700 dark:text-red-300/90">
                 {title}
               </h3>
               <p className="text-sm leading-[1.125rem] md:text-base md:leading-[1.375rem] text-muted-foreground">
@@ -102,10 +102,10 @@ export function ProblemSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="inline-block mb-4 px-4 py-1.5 rounded-full border border-red-500/20 bg-red-500/5 text-red-400/80 text-sm font-medium">
+          <span className="inline-block mb-4 px-4 py-1.5 rounded-full border border-red-500/20 bg-red-100 dark:bg-red-500/5 text-red-400/80 text-sm font-medium">
             THE PROBLEM
           </span>
-          <h2 className="text-4xl md:text-6xl font-bold bg-gradient-to-br from-red-200 to-red-400 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-6xl font-bold bg-gradient-to-br from-red-700 to-red-500 dark:from-red-200 dark:to-red-400 bg-clip-text text-transparent">
             Manual Prospecting is
             <br />Costing Revenue
           </h2>

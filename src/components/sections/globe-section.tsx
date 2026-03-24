@@ -56,8 +56,8 @@ export function GlobeSection() {
           transition={{ duration: 0.7, ease: [0.25, 0.4, 0.25, 1] }}
           className="text-center mb-12"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-teal-500/20 bg-teal-500/5 mb-6">
-            <GlobeIcon className="w-3.5 h-3.5 text-teal-400" />
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-teal-400/30 dark:border-teal-500/20 bg-teal-100 dark:bg-teal-500/5 mb-6">
+            <GlobeIcon className="w-3.5 h-3.5 text-teal-700 dark:text-teal-400" />
             <span className="text-xs font-mono text-teal-300 uppercase tracking-widest">
               Global Reach
             </span>
@@ -108,7 +108,7 @@ export function GlobeSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.3 + i * 0.1 }}
-                  className="rounded-xl border border-teal-500/10 bg-teal-500/5 p-5"
+                  className="rounded-xl border border-teal-500/10 bg-teal-100 dark:bg-teal-500/5 p-5"
                 >
                   <p className="text-2xl md:text-3xl font-bold text-teal-300 tracking-tight">
                     {stat.value}

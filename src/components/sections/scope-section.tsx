@@ -80,9 +80,9 @@ const phases = [
 ];
 
 const phaseColorMap: Record<string, { border: string; bg: string; text: string }> = {
-  teal: { border: "border-teal-500/20", bg: "bg-teal-500/8", text: "text-teal-400" },
-  violet: { border: "border-violet-500/20", bg: "bg-violet-500/8", text: "text-violet-400" },
-  amber: { border: "border-amber-500/20", bg: "bg-amber-500/8", text: "text-amber-400" },
+  teal: { border: "border-teal-400/30 dark:border-teal-500/20", bg: "bg-teal-500/8", text: "text-teal-700 dark:text-teal-400" },
+  violet: { border: "border-violet-500/20", bg: "bg-violet-500/8", text: "text-violet-700 dark:text-violet-400" },
+  amber: { border: "border-amber-500/20", bg: "bg-amber-500/8", text: "text-amber-700 dark:text-amber-400" },
 };
 
 export function ScopeSection() {
@@ -96,10 +96,10 @@ export function ScopeSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="inline-block mb-4 px-4 py-1.5 rounded-full border border-amber-500/20 bg-amber-500/5 text-amber-400 text-sm font-medium">
+          <span className="inline-block mb-4 px-4 py-1.5 rounded-full border border-amber-500/20 bg-amber-100 dark:bg-amber-500/5 text-amber-700 dark:text-amber-400 text-sm font-medium">
             SCOPE & TIMELINE
           </span>
-          <h2 className="text-4xl md:text-6xl font-bold bg-gradient-to-br from-white to-teal-200 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-6xl font-bold bg-gradient-to-br from-foreground to-teal-500 dark:to-teal-200 bg-clip-text text-transparent">
             Three Phases. Eight Weeks.
           </h2>
           <p className="mt-6 text-muted-foreground max-w-2xl mx-auto text-lg leading-relaxed">

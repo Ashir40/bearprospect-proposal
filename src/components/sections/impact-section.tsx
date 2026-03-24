@@ -42,10 +42,10 @@ export function ImpactSection() {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <span className="inline-block mb-4 px-4 py-1.5 rounded-full border border-emerald-500/20 bg-emerald-500/5 text-emerald-400 text-sm font-medium">
+          <span className="inline-block mb-4 px-4 py-1.5 rounded-full border border-emerald-500/20 bg-emerald-100 dark:bg-emerald-500/5 text-emerald-700 dark:text-emerald-400 text-sm font-medium">
             PROJECTED IMPACT
           </span>
-          <h2 className="text-4xl md:text-6xl font-bold bg-gradient-to-br from-white to-emerald-200 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-6xl font-bold bg-gradient-to-br from-foreground to-emerald-600 dark:to-emerald-200 bg-clip-text text-transparent">
             The Numbers Speak
           </h2>
         </motion.div>
@@ -64,22 +64,22 @@ export function ImpactSection() {
               <GlowingEffect spread={30} glow={true} disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
               <div className="relative overflow-hidden rounded-xl bg-card border border-border/50 p-6">
                 <div className="flex items-center justify-between mb-4">
-                  <div className="w-10 h-10 rounded-xl bg-emerald-500/8 flex items-center justify-center text-emerald-400">{metric.icon}</div>
+                  <div className="w-10 h-10 rounded-xl bg-emerald-500/8 flex items-center justify-center text-emerald-700 dark:text-emerald-400">{metric.icon}</div>
                   <div className="flex items-center gap-1 px-3 py-1 rounded-full bg-emerald-500/8 border border-emerald-500/20">
-                    <ArrowUpRight className="h-3 w-3 text-emerald-400" />
-                    <span className="text-xs font-bold text-emerald-400">{metric.improvement}</span>
+                    <ArrowUpRight className="h-3 w-3 text-emerald-700 dark:text-emerald-400" />
+                    <span className="text-xs font-bold text-emerald-700 dark:text-emerald-400">{metric.improvement}</span>
                   </div>
                 </div>
                 <h4 className="text-sm text-muted-foreground mb-3 font-medium">{metric.label}</h4>
                 <div className="flex items-end gap-4">
                   <div>
                     <p className="text-xs text-muted-foreground/60 mb-0.5">Current</p>
-                    <p className="text-lg text-red-400/60 line-through decoration-red-500/30">{metric.current}</p>
+                    <p className="text-lg text-red-500 dark:text-red-400/60 line-through decoration-red-500/30">{metric.current}</p>
                   </div>
                   <div className="text-border">→</div>
                   <div>
                     <p className="text-xs text-muted-foreground/60 mb-0.5">Projected</p>
-                    <p className="text-2xl font-bold text-emerald-400">{metric.projected}</p>
+                    <p className="text-2xl font-bold text-emerald-700 dark:text-emerald-400">{metric.projected}</p>
                   </div>
                 </div>
               </div>
@@ -113,7 +113,7 @@ export function ImpactSection() {
             >
               <div className="relative overflow-hidden rounded-xl bg-card border border-border/50 p-6">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-teal-500/8 flex items-center justify-center text-teal-400 shrink-0">{value.icon}</div>
+                  <div className="w-12 h-12 rounded-xl bg-teal-500/8 flex items-center justify-center text-teal-700 dark:text-teal-400 shrink-0">{value.icon}</div>
                   <div>
                     <h4 className="text-lg font-bold text-foreground mb-2">{value.title}</h4>
                     <p className="text-sm text-muted-foreground leading-relaxed">{value.description}</p>

@@ -30,7 +30,7 @@ export function CTASection() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold bg-gradient-to-br from-white via-teal-100 to-teal-400 bg-clip-text text-transparent leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold bg-gradient-to-br from-foreground via-teal-600 to-teal-500 dark:via-teal-100 dark:to-teal-400 bg-clip-text text-transparent leading-tight">
             Ready to Build the
             <br />Future of Sales?
           </h2>
@@ -60,7 +60,7 @@ export function CTASection() {
                 viewport={{ once: true }}
                 className="flex items-start gap-3 p-4 rounded-xl bg-card/80 border border-border/50"
               >
-                <CheckCircle2 className="h-5 w-5 text-teal-400 mt-0.5 shrink-0" />
+                <CheckCircle2 className="h-5 w-5 text-teal-700 dark:text-teal-400 mt-0.5 shrink-0" />
                 <span className="text-sm text-foreground/80">{step}</span>
               </motion.div>
             ))}
@@ -76,7 +76,7 @@ export function CTASection() {
         >
           <InteractiveHoverButton
             text="Let's Go"
-            className="w-44 border-teal-500/40 text-teal-300 bg-background text-lg py-3"
+            className="w-44 border-teal-500/40 text-teal-700 dark:text-teal-300 bg-background text-lg py-3"
             onClick={handleClick}
           />
         </motion.div>
@@ -88,14 +88,14 @@ export function CTASection() {
           viewport={{ once: true }}
           className="mt-20 text-center"
         >
-          <p className="text-2xl font-bold bg-gradient-to-r from-teal-400 to-emerald-400 bg-clip-text text-transparent">
+          <p className="text-2xl font-bold bg-gradient-to-r from-teal-600 to-emerald-600 dark:from-teal-400 dark:to-emerald-400 bg-clip-text text-transparent">
             BearProspect
           </p>
           <p className="mt-2 text-muted-foreground text-sm">
             Built by Bearplex. Powered by AI. Fully Autonomous.
           </p>
           <p className="mt-4 text-muted-foreground text-xs">
-            Created, Strategized &amp; Researched by <span className="text-teal-400/70">Ashir Nadeem</span>
+            Created, Strategized &amp; Researched by <span className="text-teal-600 dark:text-teal-400/70">Ashir Nadeem</span>
           </p>
           <p className="mt-2 text-muted-foreground/40 text-xs font-[family-name:var(--font-jetbrains-mono)]">
             Bearplex Engineering Team — March 2026
