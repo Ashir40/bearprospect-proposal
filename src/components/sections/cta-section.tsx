@@ -14,9 +14,13 @@ const nextSteps = [
 ];
 
 export function CTASection() {
+  const handleClick = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
-    <section className="relative bg-slate-950 py-32 px-4 md:px-8 overflow-hidden">
-      <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="cyan" />
+    <section className="relative bg-[#0a0f1e] py-32 px-4 md:px-8 overflow-hidden">
+      <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="#2dd4bf" />
 
       <div className="max-w-4xl mx-auto relative z-10">
         <motion.div
@@ -26,11 +30,11 @@ export function CTASection() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <h2 className="text-4xl md:text-6xl font-bold bg-gradient-to-br from-white via-cyan-200 to-cyan-500 bg-clip-text text-transparent leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold bg-gradient-to-br from-white via-teal-100 to-teal-400 bg-clip-text text-transparent leading-tight">
             Ready to Build the
             <br />Future of Sales?
           </h2>
-          <p className="mt-6 text-slate-400 text-lg max-w-2xl mx-auto">
+          <p className="mt-6 text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed">
             &ldquo;The best sales team is one that never sleeps, never forgets to follow up,
             and gets smarter with every conversation.&rdquo;
           </p>
@@ -54,9 +58,9 @@ export function CTASection() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.4 + index * 0.1, duration: 0.4 }}
                 viewport={{ once: true }}
-                className="flex items-start gap-3 p-4 rounded-xl bg-slate-900/50 border border-slate-800/50"
+                className="flex items-start gap-3 p-4 rounded-xl bg-[#0d1224]/80 border border-[#1a2744]/50"
               >
-                <CheckCircle2 className="h-5 w-5 text-cyan-400 mt-0.5 shrink-0" />
+                <CheckCircle2 className="h-5 w-5 text-teal-400 mt-0.5 shrink-0" />
                 <span className="text-sm text-slate-300">{step}</span>
               </motion.div>
             ))}
@@ -72,7 +76,8 @@ export function CTASection() {
         >
           <InteractiveHoverButton
             text="Let's Go"
-            className="w-44 border-cyan-500/50 text-cyan-400 bg-slate-950 text-lg py-3"
+            className="w-44 border-teal-500/40 text-teal-300 bg-[#0a0f1e] text-lg py-3"
+            onClick={handleClick}
           />
         </motion.div>
 
@@ -83,14 +88,17 @@ export function CTASection() {
           viewport={{ once: true }}
           className="mt-20 text-center"
         >
-          <p className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+          <p className="text-2xl font-bold bg-gradient-to-r from-teal-400 to-emerald-400 bg-clip-text text-transparent">
             BearProspect
           </p>
           <p className="mt-2 text-slate-500 text-sm">
             Built by Bearplex. Powered by AI. Fully Autonomous.
           </p>
-          <p className="mt-6 text-slate-700 text-xs">
-            Prepared by the Bearplex Engineering Team — March 2026
+          <p className="mt-4 text-slate-500 text-xs">
+            Created, Strategized &amp; Researched by <span className="text-teal-400/70">Ashir Nadeem</span>
+          </p>
+          <p className="mt-2 text-slate-700 text-xs font-[family-name:var(--font-jetbrains-mono)]">
+            Bearplex Engineering Team — March 2026
           </p>
         </motion.div>
       </div>

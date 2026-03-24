@@ -1,15 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --background: #020617;
+  --background: #0a0f1e;
   --foreground: #e2e8f0;
   --card: #0f172a;
   --card-foreground: #e2e8f0;
-  --primary: #06b6d4;
-  --primary-foreground: #020617;
-  --muted: #1e293b;
-  --muted-foreground: #94a3b8;
-  --border: #1e293b;
+  --primary: #2dd4bf;
+  --primary-foreground: #0a0f1e;
+  --muted: #162032;
+  --muted-foreground: #8b9cb8;
+  --border: #1a2744;
+  --accent-warm: #f59e0b;
 }
 
 @theme inline {
@@ -22,8 +23,8 @@
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains-mono);
 }
 
 @keyframes spotlight {
@@ -46,7 +47,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), 'Inter', sans-serif;
 }
 
 html {
@@ -57,8 +58,8 @@ html {
 .loader {
   width: 48px;
   height: 48px;
-  border: 3px solid rgba(255, 255, 255, 0.1);
-  border-top-color: #06b6d4;
+  border: 3px solid rgba(255, 255, 255, 0.06);
+  border-top-color: #2dd4bf;
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
 }
@@ -69,20 +70,53 @@ html {
   }
 }
 
-/* Hide scrollbar for cleaner look */
+/* Mermaid overrides */
+.mermaid-wrapper {
+  -webkit-overflow-scrolling: touch;
+}
+
+.mermaid-wrapper svg {
+  max-width: 100%;
+  height: auto;
+  min-width: 500px;
+}
+
+.mermaid-wrapper .node rect,
+.mermaid-wrapper .node circle,
+.mermaid-wrapper .node polygon {
+  rx: 8;
+  ry: 8;
+}
+
+@media (max-width: 640px) {
+  .mermaid-wrapper svg {
+    min-width: 450px;
+  }
+  .mermaid-wrapper {
+    font-size: 12px;
+  }
+}
+
+/* Calm scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 5px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #020617;
+  background: #0a0f1e;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
-  border-radius: 3px;
+  background: #1a2744;
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #334155;
+  background: #243656;
+}
+
+/* Selection color */
+::selection {
+  background: rgba(45, 212, 191, 0.2);
+  color: #e2e8f0;
 }
