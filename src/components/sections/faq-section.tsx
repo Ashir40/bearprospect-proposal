@@ -16,9 +16,9 @@ const faqItems: FAQItem[] = [
       "Because shallow research gets you ignored. In those 20 minutes, BearProspect's AI agents crawl the prospect's website, analyze their tech stack, scan their LinkedIn hiring activity, review recent funding rounds, read their job postings to identify pain points, map decision-makers across the org, score them against our ICP, and generate a hyper-personalized outreach angle. A human doing this manually takes 30-45 minutes and still misses signals. The AI does it in 20 minutes with 100% consistency across every single prospect — no shortcuts, no fatigue, no missed details. Multiply that by 50-100 prospects per week and you're looking at 16-33 hours of deep research running autonomously while your BD team focuses on closing.",
   },
   {
-    question: "We have 65+ engineers. Why can't we just assign a few to do manual outreach?",
+    question: "Bearplex already has a BD team — why do they need an autonomous engine?",
     answer:
-      "Your engineers build products — that's where they generate revenue. Every hour an engineer spends researching LinkedIn profiles or writing cold emails is an hour not spent shipping features for clients paying $85-125/hr. BearProspect costs a fraction of one engineer's time to operate and produces 40x the outreach volume. The math is simple: manual outreach = 5-10 prospects/week at 2-3% reply rate = maybe 1 meeting/month. BearProspect = 200-400 prospects/week at 8-15% reply rate = 15-25 meetings/month. That's not incremental improvement — it's a category shift.",
+      "Bearplex has Ashir and Awais on business development, and they're sharp closers. But right now, 70% of their time is burned on manual research and admin — only 30% goes to actual selling. There's no systematic way to detect companies that need AI engineering right now, so opportunities slip away daily. When they do reach out, the messaging is generic — it doesn't speak to the prospect's tech stack, AI gaps, or specific pain points, so it gets ignored. And warm leads go cold because follow-ups are manual and inconsistent, with zero data on what converts. BearProspect eliminates all of that. It handles discovery, research, personalized outreach, and follow-ups autonomously — so Ashir and Awais spend 100% of their time on what they're best at: closing deals and building relationships. The math shifts from 5-10 prospects/week with a 2-3% reply rate to 200-400/week at 8-15%. That's not helping them work harder — it's removing the bottleneck entirely.",
   },
   {
     question: "How is this different from tools like Apollo, Instantly, or Lemlist?",
@@ -56,9 +56,9 @@ const faqItems: FAQItem[] = [
       "The Reply Classifier categorizes every response into: Interested (route to meeting booker), Objection (route to objection handler), Not Now (add to nurture sequence), or Unsubscribe (remove immediately). For objections, we've pre-scripted handlers for the three most common ones: 'We're building in-house' (response: offer to augment their team, not replace), 'We tried AI and it didn't work' (response: specific case study of Bearplex fixing failed AI implementations), 'Too expensive' (response: reframe as cost of inaction with ROI math). The AI adapts the script to each specific conversation context.",
   },
   {
-    question: "Why build this in-house instead of hiring a sales agency?",
+    question: "What makes BearProspect a competitive moat for Bearplex?",
     answer:
-      "A sales agency charges $5-15K/month, takes 3-6 months to ramp, doesn't understand your tech stack, and walks away with all the relationship data when the contract ends. BearProspect is a permanent asset — every conversation, every reply, every closed deal trains the system to be better at selling Bearplex's specific services. After 6 months, you have proprietary sales intelligence that no competitor can replicate. Plus, an agency sends the same generic sequences to everyone. BearProspect writes unique outreach for every single prospect based on their actual situation.",
+      "Every outreach cycle feeds data back into the system — which industries respond fastest, what messaging converts, which pain points resonate, what objections come up. After 3-6 months, Bearplex owns a proprietary sales intelligence layer that no competitor can replicate. A sales agency walks away with the relationship data when the contract ends. A tool like Apollo gives the same data to everyone. BearProspect is a compounding asset — it gets smarter about selling Bearplex's specific services with every single interaction. Combine that with the option to productize it into a standalone SaaS and you're not just solving your own pipeline problem, you're building a new revenue line.",
   },
 ];
 
@@ -86,10 +86,10 @@ export function FAQSection() {
             </span>
           </div>
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 tracking-tight">
-            Questions Hamad Would Ask
+            Frequently Asked Questions
           </h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-            The hard questions a CEO should ask before greenlighting an autonomous sales engine — and the honest answers.
+            Everything you need to know about BearProspect — the what, the why, and the how.
           </p>
         </motion.div>
 
