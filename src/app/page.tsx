@@ -9,6 +9,7 @@ import { ScopeSection } from "@/components/sections/scope-section";
 import { ImpactSection } from "@/components/sections/impact-section";
 import { CTASection } from "@/components/sections/cta-section";
 import { FAQSection } from "@/components/sections/faq-section";
+import { GlobeSection } from "@/components/sections/globe-section";
 
 export default function Home() {
   return (
@@ -68,6 +69,11 @@ export default function Home() {
       {/* Impact */}
       <div id="impact">
         <ImpactSection />
+      </div>
+
+      {/* Global Reach - Globe */}
+      <div id="reach">
+        <GlobeSection />
       </div>
 
       {/* FAQ */}
