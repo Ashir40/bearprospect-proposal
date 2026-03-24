@@ -19,7 +19,7 @@ export function CTASection() {
   };
 
   return (
-    <section className="relative bg-[#0a0f1e] py-32 px-4 md:px-8 overflow-hidden">
+    <section className="relative bg-background py-32 px-4 md:px-8 overflow-hidden">
       <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="#2dd4bf" />
 
       <div className="max-w-4xl mx-auto relative z-10">
@@ -34,7 +34,7 @@ export function CTASection() {
             Ready to Build the
             <br />Future of Sales?
           </h2>
-          <p className="mt-6 text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-6 text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
             &ldquo;The best sales team is one that never sleeps, never forgets to follow up,
             and gets smarter with every conversation.&rdquo;
           </p>
@@ -47,7 +47,7 @@ export function CTASection() {
           viewport={{ once: true }}
           className="mt-16"
         >
-          <h3 className="text-xl font-bold text-white mb-6 text-center">
+          <h3 className="text-xl font-bold text-foreground mb-6 text-center">
             Recommended Next Steps
           </h3>
           <div className="space-y-3 max-w-xl mx-auto">
@@ -58,10 +58,10 @@ export function CTASection() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.4 + index * 0.1, duration: 0.4 }}
                 viewport={{ once: true }}
-                className="flex items-start gap-3 p-4 rounded-xl bg-[#0d1224]/80 border border-[#1a2744]/50"
+                className="flex items-start gap-3 p-4 rounded-xl bg-card/80 border border-border/50"
               >
                 <CheckCircle2 className="h-5 w-5 text-teal-400 mt-0.5 shrink-0" />
-                <span className="text-sm text-slate-300">{step}</span>
+                <span className="text-sm text-foreground/80">{step}</span>
               </motion.div>
             ))}
           </div>
@@ -76,7 +76,7 @@ export function CTASection() {
         >
           <InteractiveHoverButton
             text="Let's Go"
-            className="w-44 border-teal-500/40 text-teal-300 bg-[#0a0f1e] text-lg py-3"
+            className="w-44 border-teal-500/40 text-teal-300 bg-background text-lg py-3"
             onClick={handleClick}
           />
         </motion.div>
@@ -91,13 +91,13 @@ export function CTASection() {
           <p className="text-2xl font-bold bg-gradient-to-r from-teal-400 to-emerald-400 bg-clip-text text-transparent">
             BearProspect
           </p>
-          <p className="mt-2 text-slate-500 text-sm">
+          <p className="mt-2 text-muted-foreground text-sm">
             Built by Bearplex. Powered by AI. Fully Autonomous.
           </p>
-          <p className="mt-4 text-slate-500 text-xs">
+          <p className="mt-4 text-muted-foreground text-xs">
             Created, Strategized &amp; Researched by <span className="text-teal-400/70">Ashir Nadeem</span>
           </p>
-          <p className="mt-2 text-slate-700 text-xs font-[family-name:var(--font-jetbrains-mono)]">
+          <p className="mt-2 text-muted-foreground/40 text-xs font-[family-name:var(--font-jetbrains-mono)]">
             Bearplex Engineering Team — March 2026
           </p>
         </motion.div>

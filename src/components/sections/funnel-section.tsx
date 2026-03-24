@@ -143,7 +143,7 @@ const colorMap: Record<string, { border: string; bg: string; text: string }> = {
 
 export function FunnelSection() {
   return (
-    <section className="relative bg-[#0a0f1e] py-24 px-4 md:px-8">
+    <section className="relative bg-background py-24 px-4 md:px-8">
       <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -158,7 +158,7 @@ export function FunnelSection() {
           <h2 className="text-4xl md:text-6xl font-bold bg-gradient-to-br from-white to-teal-200 bg-clip-text text-transparent">
             The Autonomous Funnel
           </h2>
-          <p className="mt-6 text-slate-400 max-w-2xl mx-auto text-lg leading-relaxed">
+          <p className="mt-6 text-muted-foreground max-w-2xl mx-auto text-lg leading-relaxed">
             Five AI-powered stages working 24/7 — from discovery to booked meeting, with zero manual intervention.
           </p>
         </motion.div>
@@ -169,9 +169,9 @@ export function FunnelSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="mb-20 p-6 rounded-2xl bg-[#0d1224] border border-[#1a2744] overflow-x-auto"
+          className="mb-20 p-6 rounded-2xl bg-card border border-border overflow-x-auto"
         >
-          <p className="text-xs text-slate-500 uppercase tracking-wider font-medium mb-4 text-center font-[family-name:var(--font-jetbrains-mono)]">
+          <p className="text-xs text-muted-foreground uppercase tracking-wider font-medium mb-4 text-center font-[family-name:var(--font-jetbrains-mono)]">
             System Flow Overview
           </p>
           <MermaidDiagram chart={funnelOverviewDiagram} className="mermaid-wrapper flex justify-center" />
@@ -180,6 +180,8 @@ export function FunnelSection() {
         <div className="relative">
           {stages.map((stage, index) => {
             const colors = colorMap[stage.color];
+            // Visual funnel: each stage gets narrower (100% → 92% → 84% → 76% → 68%)
+            const funnelWidth = 100 - index * 8;
             return (
               <React.Fragment key={index}>
                 <motion.div
@@ -187,9 +189,10 @@ export function FunnelSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1, duration: 0.6 }}
                   viewport={{ once: true, margin: "-100px" }}
-                  className="relative mb-8"
+                  className="relative mb-8 mx-auto transition-all duration-500"
+                  style={{ width: `${funnelWidth}%` }}
                 >
-                  <div className="relative rounded-[1.5rem] border-[0.75px] border-[#1a2744] p-3">
+                  <div className="relative rounded-[1.5rem] border-[0.75px] border-border p-3">
                     <GlowingEffect
                       spread={40}
                       glow={true}
@@ -198,7 +201,7 @@ export function FunnelSection() {
                       inactiveZone={0.01}
                       borderWidth={2}
                     />
-                    <div className="relative overflow-hidden rounded-xl border-[0.75px] border-[#1a2744]/50 bg-[#0d1224] p-5 sm:p-8 md:p-10">
+                    <div className="relative overflow-hidden rounded-xl border-[0.75px] border-border/50 bg-card p-5 sm:p-8 md:p-10">
                       <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-6 mb-6 md:mb-8">
                         <div className={cn("w-12 h-12 md:w-16 md:h-16 rounded-2xl flex items-center justify-center shrink-0", colors.bg, colors.text)}>
                           {stage.mainIcon}
@@ -210,32 +213,32 @@ export function FunnelSection() {
                             </span>
                             <div className={cn("h-px flex-1 opacity-20", colors.bg)} />
                           </div>
-                          <h3 className="text-3xl md:text-4xl font-bold text-white mb-1">
+                          <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-1">
                             {stage.title}
                           </h3>
-                          <p className="text-lg text-slate-400">{stage.subtitle}</p>
+                          <p className="text-lg text-muted-foreground">{stage.subtitle}</p>
                         </div>
                         <div className={cn("px-4 py-2 rounded-full text-sm font-semibold shrink-0 border", colors.bg, colors.text, colors.border)}>
                           {stage.metrics}
                         </div>
                       </div>
 
-                      <p className="text-slate-300/80 text-base md:text-lg mb-8 leading-relaxed">
+                      <p className="text-foreground/80 text-base md:text-lg mb-8 leading-relaxed">
                         {stage.description}
                       </p>
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                         {stage.details.map((detail, i) => (
-                          <div key={i} className="flex items-start gap-3 p-3 rounded-lg bg-[#0a0f1e]/80 border border-[#1a2744]/50">
+                          <div key={i} className="flex items-start gap-3 p-3 rounded-lg bg-background/80 border border-border/50">
                             <div className={cn("w-1.5 h-1.5 rounded-full mt-2 shrink-0", colors.text === "text-teal-400" ? "bg-teal-400" : colors.text === "text-emerald-400" ? "bg-emerald-400" : colors.text === "text-amber-400" ? "bg-amber-400" : colors.text === "text-violet-400" ? "bg-violet-400" : "bg-rose-400")} />
-                            <span className="text-sm text-slate-400">{detail}</span>
+                            <span className="text-sm text-muted-foreground">{detail}</span>
                           </div>
                         ))}
                       </div>
 
                       {stage.personas && (
                         <div className="mt-6 flex flex-wrap gap-2">
-                          <span className="text-xs text-slate-500 mr-2 self-center">Target personas:</span>
+                          <span className="text-xs text-muted-foreground mr-2 self-center">Target personas:</span>
                           {stage.personas.map((p) => (
                             <span key={p} className={cn("px-3 py-1 rounded-full text-xs font-medium", colors.bg, colors.text)}>{p}</span>
                           ))}
@@ -243,20 +246,20 @@ export function FunnelSection() {
                       )}
 
                       {stage.output && (
-                        <div className="mt-6 p-4 rounded-xl bg-[#0a0f1e] border border-[#1a2744]">
-                          <p className="text-xs text-slate-500 mb-3 uppercase tracking-wider font-medium font-[family-name:var(--font-jetbrains-mono)]">Example Agent Output</p>
+                        <div className="mt-6 p-4 rounded-xl bg-background border border-border">
+                          <p className="text-xs text-muted-foreground mb-3 uppercase tracking-wider font-medium font-[family-name:var(--font-jetbrains-mono)]">Example Agent Output</p>
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
-                            <div><span className="text-slate-500">Company:</span> <span className="text-white">{stage.output.company}</span></div>
-                            <div><span className="text-slate-500">Score:</span> <span className={colors.text}>{stage.output.score}</span></div>
-                            <div><span className="text-slate-500">Pain:</span> <span className="text-slate-300">{stage.output.pain}</span></div>
-                            <div><span className="text-slate-500">Service Match:</span> <span className="text-slate-300">{stage.output.service}</span></div>
+                            <div><span className="text-muted-foreground">Company:</span> <span className="text-foreground">{stage.output.company}</span></div>
+                            <div><span className="text-muted-foreground">Score:</span> <span className={colors.text}>{stage.output.score}</span></div>
+                            <div><span className="text-muted-foreground">Pain:</span> <span className="text-foreground/80">{stage.output.pain}</span></div>
+                            <div><span className="text-muted-foreground">Service Match:</span> <span className="text-foreground/80">{stage.output.service}</span></div>
                           </div>
                         </div>
                       )}
 
                       {stage.alerts && (
                         <div className="mt-6 flex flex-wrap gap-2">
-                          <span className="text-xs text-slate-500 mr-2 self-center">Instant alerts via:</span>
+                          <span className="text-xs text-muted-foreground mr-2 self-center">Instant alerts via:</span>
                           {stage.alerts.map((a) => (
                             <span key={a} className={cn("px-3 py-1 rounded-full text-xs font-medium", colors.bg, colors.text)}>{a}</span>
                           ))}
@@ -274,7 +277,7 @@ export function FunnelSection() {
                       transition={{ delay: 0.2, duration: 0.3 }}
                       viewport={{ once: true }}
                     >
-                      <ArrowDown className="h-8 w-8 text-[#1a2744]" />
+                      <ArrowDown className="h-8 w-8 text-border" />
                     </motion.div>
                   </div>
                 )}

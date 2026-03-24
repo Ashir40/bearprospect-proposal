@@ -1,9 +1,24 @@
 @import "tailwindcss";
 
 :root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --card: #f1f5f9;
+  --card-foreground: #0f172a;
+  --primary: #0d9488;
+  --primary-foreground: #ffffff;
+  --muted: #e2e8f0;
+  --muted-foreground: #64748b;
+  --border: #cbd5e1;
+  --accent-warm: #d97706;
+  --surface: #e2e8f0;
+  --surface-elevated: #ffffff;
+}
+
+.dark {
   --background: #0a0f1e;
   --foreground: #e2e8f0;
-  --card: #0f172a;
+  --card: #0d1224;
   --card-foreground: #e2e8f0;
   --primary: #2dd4bf;
   --primary-foreground: #0a0f1e;
@@ -11,6 +26,8 @@
   --muted-foreground: #8b9cb8;
   --border: #1a2744;
   --accent-warm: #f59e0b;
+  --surface: #1a2744;
+  --surface-elevated: #0f172a;
 }
 
 @theme inline {
@@ -23,6 +40,8 @@
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
+  --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
   --font-sans: var(--font-inter);
   --font-mono: var(--font-jetbrains-mono);
 }
@@ -48,6 +67,7 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-inter), 'Inter', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 html {
@@ -59,7 +79,7 @@ html {
   width: 48px;
   height: 48px;
   border: 3px solid rgba(255, 255, 255, 0.06);
-  border-top-color: #2dd4bf;
+  border-top-color: var(--primary);
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
 }
@@ -103,20 +123,20 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: #0a0f1e;
+  background: var(--background);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1a2744;
+  background: var(--border);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #243656;
+  background: var(--muted-foreground);
 }
 
 /* Selection color */
 ::selection {
   background: rgba(45, 212, 191, 0.2);
-  color: #e2e8f0;
+  color: var(--foreground);
 }

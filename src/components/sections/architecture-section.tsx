@@ -153,7 +153,7 @@ const techStack = [
 
 export function ArchitectureSection() {
   return (
-    <section className="relative bg-[#0a0f1e] py-24 px-4 md:px-8">
+    <section className="relative bg-background py-24 px-4 md:px-8">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -168,7 +168,7 @@ export function ArchitectureSection() {
           <h2 className="text-4xl md:text-6xl font-bold bg-gradient-to-br from-white to-teal-200 bg-clip-text text-transparent">
             Five Layers. One Engine.
           </h2>
-          <p className="mt-6 text-slate-400 max-w-2xl mx-auto text-lg leading-relaxed">
+          <p className="mt-6 text-muted-foreground max-w-2xl mx-auto text-lg leading-relaxed">
             Each layer is independently scalable and connected through event-driven pipelines.
           </p>
         </motion.div>
@@ -179,9 +179,9 @@ export function ArchitectureSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="mb-20 p-6 rounded-2xl bg-[#0d1224] border border-[#1a2744] overflow-x-auto"
+          className="mb-20 p-6 rounded-2xl bg-card border border-border overflow-x-auto"
         >
-          <p className="text-xs text-slate-500 uppercase tracking-wider font-medium mb-4 text-center font-[family-name:var(--font-jetbrains-mono)]">
+          <p className="text-xs text-muted-foreground uppercase tracking-wider font-medium mb-4 text-center font-[family-name:var(--font-jetbrains-mono)]">
             Full System Architecture
           </p>
           <MermaidDiagram chart={architectureDiagram} className="mermaid-wrapper flex justify-center" />
@@ -198,16 +198,16 @@ export function ArchitectureSection() {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.1, duration: 0.5 }}
                   viewport={{ once: true }}
-                  className="relative rounded-2xl border-[0.75px] border-[#1a2744] p-2"
+                  className="relative rounded-2xl border-[0.75px] border-border p-2"
                 >
                   <GlowingEffect spread={30} glow={true} disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
-                  <div className="relative overflow-hidden rounded-xl bg-[#0d1224] border border-[#1a2744]/50 p-6">
+                  <div className="relative overflow-hidden rounded-xl bg-card border border-border/50 p-6">
                     <div className="flex flex-col md:flex-row md:items-center gap-4">
                       <div className={cn("w-12 h-12 rounded-xl flex items-center justify-center shrink-0", colors.bg, colors.text)}>{layer.icon}</div>
                       <h3 className={cn("text-lg md:text-xl font-bold shrink-0 w-full md:w-48", colors.text)}>{layer.title}</h3>
                       <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
                         {layer.items.map((item, i) => (
-                          <div key={i} className="px-3 py-2 rounded-lg bg-[#0a0f1e]/80 border border-[#1a2744]/50 text-sm text-slate-400">{item}</div>
+                          <div key={i} className="px-3 py-2 rounded-lg bg-background/80 border border-border/50 text-sm text-muted-foreground">{item}</div>
                         ))}
                       </div>
                     </div>
@@ -215,7 +215,7 @@ export function ArchitectureSection() {
                 </motion.div>
                 {index < layers.length - 1 && (
                   <div className="flex justify-center">
-                    <ArrowRight className="h-5 w-5 text-[#1a2744] rotate-90" />
+                    <ArrowRight className="h-5 w-5 text-border rotate-90" />
                   </div>
                 )}
               </React.Fragment>
@@ -231,7 +231,7 @@ export function ArchitectureSection() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h3 className="text-3xl md:text-4xl font-bold text-white">Tech Stack</h3>
+          <h3 className="text-3xl md:text-4xl font-bold text-foreground">Tech Stack</h3>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -244,13 +244,13 @@ export function ArchitectureSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
                 viewport={{ once: true }}
-                className="relative rounded-2xl border-[0.75px] border-[#1a2744] p-2"
+                className="relative rounded-2xl border-[0.75px] border-border p-2"
               >
-                <div className="relative overflow-hidden rounded-xl bg-[#0d1224] border border-[#1a2744]/50 p-6">
+                <div className="relative overflow-hidden rounded-xl bg-card border border-border/50 p-6">
                   <h4 className={cn("text-sm font-bold uppercase tracking-wider mb-4 font-[family-name:var(--font-jetbrains-mono)]", colors.text)}>{stack.category}</h4>
                   <div className="space-y-2">
                     {stack.items.map((item, i) => (
-                      <div key={i} className="px-3 py-2 rounded-lg bg-[#0a0f1e]/80 border border-[#1a2744]/50 text-sm text-slate-300">{item}</div>
+                      <div key={i} className="px-3 py-2 rounded-lg bg-background/80 border border-border/50 text-sm text-foreground/80">{item}</div>
                     ))}
                   </div>
                 </div>

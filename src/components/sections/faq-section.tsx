@@ -85,10 +85,10 @@ export function FAQSection() {
               FAQ
             </span>
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 tracking-tight">
+          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4 tracking-tight">
             Frequently Asked Questions
           </h2>
-          <p className="text-slate-400 text-lg max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Everything you need to know about BearProspect — the what, the why, and the how.
           </p>
         </motion.div>
@@ -123,11 +123,11 @@ export function FAQSection() {
                   <span className="text-teal-500/60 font-mono text-xs mt-1.5 shrink-0">
                     {String(index + 1).padStart(2, "0")}
                   </span>
-                  <span className="flex-1 text-white font-medium text-sm md:text-base leading-relaxed">
+                  <span className="flex-1 text-foreground font-medium text-sm md:text-base leading-relaxed">
                     {item.question}
                   </span>
                   <ChevronDown
-                    className={`w-5 h-5 text-slate-500 shrink-0 mt-0.5 transition-transform duration-300 ${
+                    className={`w-5 h-5 text-muted-foreground shrink-0 mt-0.5 transition-transform duration-300 ${
                       openIndex === index ? "rotate-180 text-teal-400" : ""
                     }`}
                   />
@@ -142,7 +142,7 @@ export function FAQSection() {
                       className="overflow-hidden"
                     >
                       <div className="px-5 md:px-6 pb-5 md:pb-6 pl-12 md:pl-14">
-                        <p className="text-slate-400 text-sm md:text-base leading-relaxed">
+                        <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
                           {item.answer}
                         </p>
                       </div>

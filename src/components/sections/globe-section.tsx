@@ -62,10 +62,10 @@ export function GlobeSection() {
               Global Reach
             </span>
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 tracking-tight">
+          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4 tracking-tight">
             Prospect Intelligence, Worldwide
           </h2>
-          <p className="text-slate-400 text-lg max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             BearProspect scans companies across every major market — identifying the right prospects at the right time.
           </p>
         </motion.div>
@@ -113,14 +113,14 @@ export function GlobeSection() {
                   <p className="text-2xl md:text-3xl font-bold text-teal-300 tracking-tight">
                     {stat.value}
                   </p>
-                  <p className="text-slate-400 text-xs mt-1 font-mono uppercase tracking-wider">
+                  <p className="text-muted-foreground text-xs mt-1 font-mono uppercase tracking-wider">
                     {stat.label}
                   </p>
                 </motion.div>
               ))}
             </div>
 
-            <p className="text-slate-400 text-sm leading-relaxed">
+            <p className="text-muted-foreground text-sm leading-relaxed">
               From Series B startups in San Francisco to enterprise companies in London and Dubai —
               BearProspect identifies companies actively hiring for roles Bearplex fills, tracks funding
               rounds, monitors tech stack changes, and scores each prospect against your ideal customer profile.

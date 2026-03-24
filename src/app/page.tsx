@@ -11,12 +11,13 @@ import { ImpactSection } from "@/components/sections/impact-section";
 import { CTASection } from "@/components/sections/cta-section";
 import { FAQSection } from "@/components/sections/faq-section";
 import { GlobeSection } from "@/components/sections/globe-section";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 export default function Home() {
   const [navVisible, setNavVisible] = useState(false);
 
   return (
-    <main className="relative bg-[#0a0f1e]">
+    <main className="relative bg-background">
       {/* Hover trigger zone — invisible strip at top of screen */}
       <div
         className="fixed top-0 left-0 right-0 h-5 z-[101]"
@@ -25,7 +26,7 @@ export default function Home() {
 
       {/* Navigation */}
       <nav
-        className={`fixed top-0 left-0 right-0 z-[100] bg-[#0a0f1e]/80 backdrop-blur-xl border-b border-teal-900/20 transition-all duration-500 ease-in-out ${
+        className={`fixed top-0 left-0 right-0 z-[100] bg-background/80 backdrop-blur-xl border-b border-teal-900/20 transition-all duration-500 ease-in-out ${
           navVisible
             ? "opacity-100 translate-y-0"
             : "opacity-0 -translate-y-full pointer-events-none"
@@ -42,20 +43,23 @@ export default function Home() {
               height={30}
               className="rounded-full"
             />
-            <span className="text-base md:text-lg font-bold text-white font-[family-name:var(--font-inter)]">
-              Bear<span className="text-teal-400">Prospect</span>
+            <span className="text-base md:text-lg font-bold text-foreground font-[family-name:var(--font-inter)]">
+              Bear<span className="text-primary">Prospect</span>
             </span>
           </div>
-          <div className="hidden md:flex items-center gap-8 text-sm text-slate-400">
-            <a href="#problem" className="hover:text-teal-300 transition-colors duration-300">Problem</a>
-            <a href="#solution" className="hover:text-teal-300 transition-colors duration-300">Solution</a>
-            <a href="#architecture" className="hover:text-teal-300 transition-colors duration-300">Architecture</a>
-            <a href="#scope" className="hover:text-teal-300 transition-colors duration-300">Scope</a>
-            <a href="#impact" className="hover:text-teal-300 transition-colors duration-300">Impact</a>
-            <a href="#faq" className="hover:text-teal-300 transition-colors duration-300">FAQ</a>
+          <div className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
+            <a href="#problem" className="hover:text-primary transition-colors duration-300">Problem</a>
+            <a href="#solution" className="hover:text-primary transition-colors duration-300">Solution</a>
+            <a href="#architecture" className="hover:text-primary transition-colors duration-300">Architecture</a>
+            <a href="#scope" className="hover:text-primary transition-colors duration-300">Scope</a>
+            <a href="#impact" className="hover:text-primary transition-colors duration-300">Impact</a>
+            <a href="#faq" className="hover:text-primary transition-colors duration-300">FAQ</a>
           </div>
-          <div className="text-xs text-slate-600 font-[family-name:var(--font-jetbrains-mono)]">
-            Bearplex Internal
+          <div className="flex items-center gap-3">
+            <span className="text-xs text-muted-foreground font-[family-name:var(--font-jetbrains-mono)]">
+              Bearplex Internal
+            </span>
+            <ThemeToggle />
           </div>
         </div>
       </nav>

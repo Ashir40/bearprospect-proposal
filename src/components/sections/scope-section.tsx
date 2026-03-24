@@ -87,7 +87,7 @@ const phaseColorMap: Record<string, { border: string; bg: string; text: string }
 
 export function ScopeSection() {
   return (
-    <section className="relative bg-[#0a0f1e] py-24 px-4 md:px-8">
+    <section className="relative bg-background py-24 px-4 md:px-8">
       <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -102,7 +102,7 @@ export function ScopeSection() {
           <h2 className="text-4xl md:text-6xl font-bold bg-gradient-to-br from-white to-teal-200 bg-clip-text text-transparent">
             Three Phases. Eight Weeks.
           </h2>
-          <p className="mt-6 text-slate-400 max-w-2xl mx-auto text-lg leading-relaxed">
+          <p className="mt-6 text-muted-foreground max-w-2xl mx-auto text-lg leading-relaxed">
             Incremental delivery with working milestones at each phase.
           </p>
         </motion.div>
@@ -113,9 +113,9 @@ export function ScopeSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="mb-20 p-6 rounded-2xl bg-[#0d1224] border border-[#1a2744] overflow-x-auto"
+          className="mb-20 p-6 rounded-2xl bg-card border border-border overflow-x-auto"
         >
-          <p className="text-xs text-slate-500 uppercase tracking-wider font-medium mb-4 text-center font-[family-name:var(--font-jetbrains-mono)]">
+          <p className="text-xs text-muted-foreground uppercase tracking-wider font-medium mb-4 text-center font-[family-name:var(--font-jetbrains-mono)]">
             Build Timeline — Gantt Chart
           </p>
           <MermaidDiagram chart={timelineDiagram} className="mermaid-wrapper flex justify-center" />
@@ -142,28 +142,28 @@ export function ScopeSection() {
                   </div>
                 </div>
 
-                <div className="relative rounded-[1.5rem] border-[0.75px] border-[#1a2744] p-3">
+                <div className="relative rounded-[1.5rem] border-[0.75px] border-border p-3">
                   <GlowingEffect spread={30} glow={true} disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
-                  <div className="relative overflow-hidden rounded-xl bg-[#0d1224] border border-[#1a2744]/50 p-8">
+                  <div className="relative overflow-hidden rounded-xl bg-card border border-border/50 p-8">
                     <div className="flex flex-col md:flex-row md:items-center gap-4 mb-6">
                       <div className={cn("w-12 h-12 rounded-xl flex items-center justify-center", colors.bg, colors.text)}>{phase.icon}</div>
                       <div className="flex-1">
-                        <h3 className="text-2xl md:text-3xl font-bold text-white">Phase {phase.number}: {phase.title}</h3>
+                        <h3 className="text-2xl md:text-3xl font-bold text-foreground">Phase {phase.number}: {phase.title}</h3>
                         <p className={cn("text-sm font-medium mt-1 font-[family-name:var(--font-jetbrains-mono)]", colors.text)}>{phase.timeline}</p>
                       </div>
                     </div>
 
                     <div className="space-y-2 mb-6">
                       {phase.deliverables.map((d, i) => (
-                        <div key={i} className="flex items-start gap-3 p-3 rounded-lg bg-[#0a0f1e]/80 border border-[#1a2744]/50">
+                        <div key={i} className="flex items-start gap-3 p-3 rounded-lg bg-background/80 border border-border/50">
                           <CheckCircle2 className={cn("h-4 w-4 mt-0.5 shrink-0", colors.text)} />
-                          <span className="text-sm text-slate-300">{d}</span>
+                          <span className="text-sm text-foreground/80">{d}</span>
                         </div>
                       ))}
                     </div>
 
                     <div className={cn("p-4 rounded-xl border", colors.bg, colors.border)}>
-                      <p className="text-xs uppercase tracking-wider text-slate-500 mb-1 font-medium font-[family-name:var(--font-jetbrains-mono)]">Milestone</p>
+                      <p className="text-xs uppercase tracking-wider text-muted-foreground mb-1 font-medium font-[family-name:var(--font-jetbrains-mono)]">Milestone</p>
                       <p className={cn("text-sm font-semibold", colors.text)}>{phase.milestone}</p>
                     </div>
                   </div>

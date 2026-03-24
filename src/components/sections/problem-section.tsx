@@ -71,7 +71,7 @@ const GridItem = ({ icon, title, description, index }: GridItemProps) => {
           inactiveZone={0.01}
           borderWidth={3}
         />
-        <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl border-[0.75px] border-red-900/20 bg-[#0d1224] p-6 shadow-sm md:p-6">
+        <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl border-[0.75px] border-red-900/20 bg-card p-6 shadow-sm md:p-6">
           <div className="relative flex flex-1 flex-col justify-between gap-3">
             <div className="w-fit rounded-lg border-[0.75px] border-red-500/20 bg-red-500/5 p-2 text-red-400/80">
               {icon}
@@ -80,7 +80,7 @@ const GridItem = ({ icon, title, description, index }: GridItemProps) => {
               <h3 className="pt-0.5 text-xl leading-[1.375rem] font-semibold tracking-[-0.04em] md:text-2xl md:leading-[1.875rem] text-red-300/90">
                 {title}
               </h3>
-              <p className="text-sm leading-[1.125rem] md:text-base md:leading-[1.375rem] text-slate-400">
+              <p className="text-sm leading-[1.125rem] md:text-base md:leading-[1.375rem] text-muted-foreground">
                 {description}
               </p>
             </div>
@@ -93,7 +93,7 @@ const GridItem = ({ icon, title, description, index }: GridItemProps) => {
 
 export function ProblemSection() {
   return (
-    <section className="relative bg-[#0a0f1e] py-24 px-4 md:px-8">
+    <section className="relative bg-background py-24 px-4 md:px-8">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -109,7 +109,7 @@ export function ProblemSection() {
             Manual Prospecting is
             <br />Costing Revenue
           </h2>
-          <p className="mt-6 text-slate-400 max-w-2xl mx-auto text-lg leading-relaxed">
+          <p className="mt-6 text-muted-foreground max-w-2xl mx-auto text-lg leading-relaxed">
             Bearplex has 65+ elite AI engineers building sovereign systems — but the sales pipeline still runs on manual effort.
           </p>
         </motion.div>
@@ -120,7 +120,7 @@ export function ProblemSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="mb-16 p-6 rounded-2xl bg-[#0d1224] border border-[#1a2744] overflow-x-auto"
+          className="mb-16 p-6 rounded-2xl bg-card border border-border overflow-x-auto"
         >
           <MermaidDiagram chart={problemDiagram} className="mermaid-wrapper flex justify-center" />
         </motion.div>

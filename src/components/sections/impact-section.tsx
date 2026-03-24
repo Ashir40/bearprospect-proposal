@@ -33,7 +33,7 @@ const strategicValues = [
 
 export function ImpactSection() {
   return (
-    <section className="relative bg-[#0a0f1e] py-24 px-4 md:px-8">
+    <section className="relative bg-background py-24 px-4 md:px-8">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -59,10 +59,10 @@ export function ImpactSection() {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
               viewport={{ once: true }}
-              className="relative rounded-2xl border-[0.75px] border-[#1a2744] p-2"
+              className="relative rounded-2xl border-[0.75px] border-border p-2"
             >
               <GlowingEffect spread={30} glow={true} disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
-              <div className="relative overflow-hidden rounded-xl bg-[#0d1224] border border-[#1a2744]/50 p-6">
+              <div className="relative overflow-hidden rounded-xl bg-card border border-border/50 p-6">
                 <div className="flex items-center justify-between mb-4">
                   <div className="w-10 h-10 rounded-xl bg-emerald-500/8 flex items-center justify-center text-emerald-400">{metric.icon}</div>
                   <div className="flex items-center gap-1 px-3 py-1 rounded-full bg-emerald-500/8 border border-emerald-500/20">
@@ -70,15 +70,15 @@ export function ImpactSection() {
                     <span className="text-xs font-bold text-emerald-400">{metric.improvement}</span>
                   </div>
                 </div>
-                <h4 className="text-sm text-slate-500 mb-3 font-medium">{metric.label}</h4>
+                <h4 className="text-sm text-muted-foreground mb-3 font-medium">{metric.label}</h4>
                 <div className="flex items-end gap-4">
                   <div>
-                    <p className="text-xs text-slate-600 mb-0.5">Current</p>
+                    <p className="text-xs text-muted-foreground/60 mb-0.5">Current</p>
                     <p className="text-lg text-red-400/60 line-through decoration-red-500/30">{metric.current}</p>
                   </div>
-                  <div className="text-[#1a2744]">→</div>
+                  <div className="text-border">→</div>
                   <div>
-                    <p className="text-xs text-slate-600 mb-0.5">Projected</p>
+                    <p className="text-xs text-muted-foreground/60 mb-0.5">Projected</p>
                     <p className="text-2xl font-bold text-emerald-400">{metric.projected}</p>
                   </div>
                 </div>
@@ -95,8 +95,8 @@ export function ImpactSection() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h3 className="text-3xl md:text-4xl font-bold text-white">Strategic Value</h3>
-          <p className="mt-4 text-slate-400 max-w-xl mx-auto">
+          <h3 className="text-3xl md:text-4xl font-bold text-foreground">Strategic Value</h3>
+          <p className="mt-4 text-muted-foreground max-w-xl mx-auto">
             BearProspect isn&apos;t just a sales tool — it&apos;s a strategic asset.
           </p>
         </motion.div>
@@ -109,14 +109,14 @@ export function ImpactSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
               viewport={{ once: true }}
-              className="relative rounded-2xl border-[0.75px] border-[#1a2744] p-2"
+              className="relative rounded-2xl border-[0.75px] border-border p-2"
             >
-              <div className="relative overflow-hidden rounded-xl bg-[#0d1224] border border-[#1a2744]/50 p-6">
+              <div className="relative overflow-hidden rounded-xl bg-card border border-border/50 p-6">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-xl bg-teal-500/8 flex items-center justify-center text-teal-400 shrink-0">{value.icon}</div>
                   <div>
-                    <h4 className="text-lg font-bold text-white mb-2">{value.title}</h4>
-                    <p className="text-sm text-slate-400 leading-relaxed">{value.description}</p>
+                    <h4 className="text-lg font-bold text-foreground mb-2">{value.title}</h4>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{value.description}</p>
                   </div>
                 </div>
               </div>
