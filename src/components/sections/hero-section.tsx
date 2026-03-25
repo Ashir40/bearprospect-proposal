@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { LampContainer } from "@/components/ui/lamp";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
@@ -28,13 +29,22 @@ export function HeroSection() {
           researches, engages, and books meetings with high-value enterprise prospects
           — without human intervention.
         </p>
-        <div className="mt-6 md:mt-8 flex gap-4">
+        <div className="mt-6 md:mt-8 flex flex-col sm:flex-row items-center gap-4">
           <InteractiveHoverButton
-            text="Explore"
-            className="w-36 md:w-40 border-teal-500/50 text-teal-700 dark:text-teal-300 bg-background"
+            text="Explore Proposal"
+            className="w-44 md:w-48 border-teal-500/50 text-teal-700 dark:text-teal-300 bg-background"
             onClick={handleExplore}
           />
+          <Link href="/research">
+            <InteractiveHoverButton
+              text="View Market Data"
+              className="w-44 md:w-48 border-emerald-500/50 text-emerald-700 dark:text-emerald-300 bg-background"
+            />
+          </Link>
         </div>
+        <p className="mt-3 text-muted-foreground/60 text-[10px] sm:text-xs text-center max-w-md">
+          50.2M addressable businesses across 4 niches — real data from 150M+ companies
+        </p>
         <p className="mt-8 md:mt-10 text-muted-foreground text-xs sm:text-sm">
           Prepared for Hamad, CEO — Bearplex
         </p>
