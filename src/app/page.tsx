@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { HeroSection } from "@/components/sections/hero-section";
 import { ProblemSection } from "@/components/sections/problem-section";
 import { FunnelSection } from "@/components/sections/funnel-section";
@@ -57,6 +58,7 @@ export default function Home() {
             <a href="#scope" className="hover:text-primary transition-colors duration-300">Scope</a>
             <a href="#impact" className="hover:text-primary transition-colors duration-300">Impact</a>
             <a href="#faq" className="hover:text-primary transition-colors duration-300">FAQ</a>
+            <Link href="/research" className="text-primary font-semibold hover:text-primary/80 transition-colors duration-300">Research</Link>
           </div>
           <span className="text-xs text-muted-foreground font-[family-name:var(--font-jetbrains-mono)]">
             Bearplex Internal
