@@ -285,6 +285,7 @@ export default function ResearchPage() {
             <a href="#wordpress" className="hover:text-primary transition-colors">WordPress</a>
             <a href="#commerce" className="hover:text-primary transition-colors">Commerce</a>
             <a href="#strategy" className="hover:text-primary transition-colors">Strategy</a>
+            <Link href="/dashboard" className="hover:text-primary transition-colors">Dashboard</Link>
             <Link href="/" className="hover:text-primary transition-colors">Back to Proposal</Link>
           </div>
           <span className="text-xs text-muted-foreground font-[family-name:var(--font-jetbrains-mono)]">Market Research</span>
